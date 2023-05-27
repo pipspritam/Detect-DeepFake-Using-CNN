@@ -1,0 +1,8 @@
+pandas
+tensorflow
+scikit-learn
+seaborn
+matplotlib
+split-folders
+numpy
+
