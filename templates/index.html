@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Interface</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Inter";
+    }
+
+    form {
+      background-color: #f8ffff;
+      padding: 50px;
+      box-shadow: -6px 6px 20px 0px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    form label {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    form label,
+    input {
+      display: block;
+    }
+
+    input[type="file"] {
+      border: none;
+    }
+
+    input[type="submit"] {
+      border: none;
+      outline: none;
+      padding: 12px 24px;
+      background-color: #00adb5;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .div {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.4rem;
+      color: #00adb5;
+    }
+
+    .div p span {
+      color: black;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Deepfake Detection</h1><br><br>
+
+  <form method="POST" enctype="multipart/form-data" action="/predict">
+    <label for="file">Upload File:</label>
+    <input type="file" name="file" id="file" />
+    <input type="submit" value="Upload" />
+  </form>
+
+  <div class="div">
+    {% if result %}
+     <!-- show the test_image from data\test folder here -->
+      <img src="{{ url_for('static', filename='test//test_image.jpg') }}" alt="test_image" width="300" height="300">
+
+      
+
+    <p>Result: <span>{{ result }}</span></p>
+    {% endif %}
+  </div>
+</body>
+
+</html>
