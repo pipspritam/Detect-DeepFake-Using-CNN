@@ -1,1 +1,3 @@
 # Detect-DeepFake-Using-CNN
+
+<p> This study proposes a deep learning-based approach for Deepfake prediction using CNN. The preferred method involves training a CNN architecture on a dataset of real and fake images obtained in Kaggle, followed by transfer learning using Xception, which has already been trained on the ImageNet dataset. The model learns to distinguish between real and fake images by identifying patterns and features unique to each class. The results show that the proposed CNN-based approach performs decently in predicting fake images, and we are aiming forward to achieve better results. </p>
